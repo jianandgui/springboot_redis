@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    password: 1111
+    username: root
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/springbootdb?verifyServerCertificate=false&useSSL=true&useUnicode=true&characterEncoding=utf8
+  redis:
+    database: 0
+    host: 172.0.0.1
+    password:
+    port: 6379
+
+server:
+  port: 8000
+
+
+mybatis:
+  type-aliases-package: com.edu.swpu.cins.entity
+  mapper-locations: classPath:mapper/*.xml
+  configuration:
+    cache-enabled: true
+    use-column-label: true
+    map-underscore-to-camel-case: true
+
+
+
+
+

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.edu.swpu.cins.dao.CityDao" >
+    
+    <select id="findAllCity" resultType="com.edu.swpu.cins.entity.City">
+        
+        SELECT * from city
+
+    </select>
+    
+    <select id="findById" parameterType="long" resultType="com.edu.swpu.cins.entity.City">
+        
+        select * from city WHERE id=#{id}
+
+    </select>
+    
+    <insert id="saveCity" parameterType="com.edu.swpu.cins.entity.City" >
+
+        INSERT into city (province_id,city_name,description) VALUES (#{provinceId},#{cityName},#{description})
+
+    </insert>
+
+    <update id="updateCity" parameterType="com.edu.swpu.cins.entity.City">
+        UPDATE
+        city
+        SET province_id=#{provinceId},
+        city_name=#{cityName},
+        description=#{description}
+        WHERE id=#{id}
+    </update>
+
+    <delete id="deleteCity" parameterType="long" >
+
+        DELETE FROM
+        city
+        WHERE id=#{id}
+    </delete>
+</mapper>
